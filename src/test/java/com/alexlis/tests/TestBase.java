@@ -12,12 +12,6 @@ public class TestBase {
 
     public GitHubPages pages = new GitHubPages();
 
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
-
-    public String getRepo() {
-        return REPOSITORY;
-    }
-
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";

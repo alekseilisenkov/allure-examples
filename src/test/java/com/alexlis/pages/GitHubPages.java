@@ -2,17 +2,20 @@ package com.alexlis.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
 public class GitHubPages {
+
+    private static final String REPOSITORY = "eroshenkoam/allure-example";
+
+    public String getRepo() {
+        return REPOSITORY;
+    }
 
     SelenideElement searchInput = $(".header-search-input");
     SelenideElement bestBuildForm = $(".h1-mktg");
@@ -44,7 +47,7 @@ public class GitHubPages {
 
     @Step("Открыть вкладку Issues")
     public void openIssuesTub() {
-        $(partialLinkText("Issues")).click();
+        $(partialLinkText("Issues")).should(Condition.visible);
     }
 
     @Step("Проверить отображение «Build like the best teams on the planet»")
