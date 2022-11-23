@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
@@ -24,7 +23,7 @@ public class GitHubWebTests extends TestBase {
     @Story("Search from main Page")
     @Tags({@Tag("web"), @Tag("minor")})
     @DisplayName("Search Issue in Allure-Example repository")
-    public void searchAllureExampleIssueTest(){
+    public void searchAllureExampleIssueTest() {
 
         pages.openMainPage();
         pages.searchForRepository(getRepo());
@@ -38,15 +37,9 @@ public class GitHubWebTests extends TestBase {
     @Tags({@Tag("web"), @Tag("minor")})
     @DisplayName("Open Team page")
     public void testGoToTeamPage() {
-        step("Перейти на главную страницу", () -> {
-            open(baseUrl);
-        });
-        step("Нажать на ссылку Team в меню", () -> {
-            $(linkText("Team")).click();
-        });
-        step("Проверить отображение «Build like the best teams on the planet»", () -> {
-            $(".h1-mktg").shouldHave(Condition.text("Build like the best teams on the planet"));
-        });
+        pages.openMainPage();
+        pages.pushButtonByText("Team");
+        pages.checkText();
     }
 
     @Test
@@ -54,19 +47,10 @@ public class GitHubWebTests extends TestBase {
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Check SignUpForFree button")
     public void testSignUpForFreeTeamPage() {
-        step("Перейти на главную страницу", () -> {
-            open(baseUrl);
-        });
-        step("Нажать на ссылку Team в меню", () -> {
-            $(linkText("Team")).click();
-        });
-        step("Нажать на кнопку «Sign up for free»", () -> {
-            $(".btn-large-mktg").click();
-        });
-        step("Проверить отображение «Create your account»", () -> {
-            $(".container-md").shouldHave(Condition.text("Join GitHub\n" +
-                    "First, let's create your user account"));
-        });
+        pages.openMainPage();
+        pages.pushButtonByText("Team");
+        pages.signUpButtonPush();
+        pages.createAccountCheck();
     }
 
     @Test
@@ -74,32 +58,9 @@ public class GitHubWebTests extends TestBase {
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Check Create your account button")
     public void testContinueWithTeamOnTeamPage() {
-        step("Перейти на главную страницу", () -> {
-            open(baseUrl);
-        });
-        step("Нажать на ссылку Team в меню", () -> {
-            $(linkText("Team")).click();
-        });
-        step("Нажать на кнопку «Continue with Team»", () -> {
-            $(".js-pricing-upgrade-path").click();
-        });
-        step("Проверить отображение «Create your account»", () -> {
-            $(".container-md").shouldHave(Condition.text("Join GitHub\n" +
-                    "First, let's create your user account\n" +
-                    "Already have an account? Sign in"));
-        });
+        pages.openMainPage();
+        pages.pushButtonByText("Team");
+        pages.pressContinue();
+        pages.createAccountCheck();
     }
-
-//    @Test
-//    public void testContactSalesOnMainPage() {
-//        step("Перейти на главную страницу", () -> {
-//            open(baseUrl);
-//        });
-//        step("Нажать на кнопку «ContactSales»", () -> {
-//            $(".btn-subtle-mktg").scrollIntoView(true).click();
-//        });
-//        step("Проверить отображение «Create your account»", () -> {
-//            $(".pb-md-6").shouldHave(Condition.text("Talk to our sales team"));
-//        });
-//    }
 }

@@ -15,6 +15,10 @@ import static org.openqa.selenium.By.partialLinkText;
 public class GitHubPages {
 
     SelenideElement searchInput = $(".header-search-input");
+    SelenideElement bestBuildForm = $(".h1-mktg");
+    SelenideElement signUpButton = $(".btn-large-mktg");
+    SelenideElement createAccountCheckForm = $(".container-md");
+    SelenideElement continueButton = $(".js-pricing-upgrade-path");
 
     @Step("Open main page GitHubCom")
     public void openMainPage() {
@@ -33,19 +37,39 @@ public class GitHubPages {
         $(linkText(repository)).click();
     }
 
-    @Step("Open tab Issues")
+    @Step("Нажать на ссылку Team в меню")
+    public void pushButtonByText(String text) {
+        $(linkText(text)).click();
+    }
+
+    @Step("Открыть вкладку Issues")
     public void openIssuesTub() {
-        attachPageSource();
         $(partialLinkText("Issues")).click();
     }
 
-    @Step("Check issue with {number}")
+    @Step("Проверить отображение «Build like the best teams on the planet»")
+    public void checkText() {
+        bestBuildForm.shouldHave(Condition.text("Build like the best teams on the planet"));
+    }
+
+    @Step("Проверить issue")
     public void shouldSeeIssueNumber() {
         $("#issue_81_link").should(Condition.visible);
     }
 
-    @Attachment(value = "Screenshot", type = "text/html", fileExtension = "html")
-    public byte[] attachPageSource() {
-        return WebDriverRunner.source().getBytes();
+    @Step("Нажать на кнопку «Sign up for free»")
+    public void signUpButtonPush() {
+        signUpButton.click();
+    }
+
+    @Step("Проверить отображение «Create your account»")
+    public void createAccountCheck() {
+        createAccountCheckForm.shouldHave(Condition.text("Join GitHub\n" +
+                "First, let's create your user account"));
+    }
+
+    @Step("Нажать на кнопку «Continue with Team»")
+    public void pressContinue() {
+        continueButton.click();
     }
 }
