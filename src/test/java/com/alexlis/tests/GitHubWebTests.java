@@ -12,8 +12,8 @@ public class GitHubWebTests extends TestBase {
 
 
     @Test
-    @Severity(SeverityLevel.CRITICAL)
-    @Story("Search from main Page")
+    @Severity(SeverityLevel.MINOR)
+    @Story("Search allure repo")
     @Tags({@Tag("web"), @Tag("minor")})
     @DisplayName("Search Issue in Allure-Example repository")
     public void searchAllureExampleIssueTest() {
@@ -25,7 +25,7 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Story("Team Page")
     @Tags({@Tag("web"), @Tag("minor")})
     @DisplayName("Open Team page")
@@ -36,9 +36,8 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.TRIVIAL)
+    @Severity(SeverityLevel.CRITICAL)
     @Story("Team Page")
-    @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Check SignUpForFree button")
     public void testSignUpForFreeTeamPage() {
         pages.openMainPage();
@@ -48,10 +47,9 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.MINOR)
     @Story("Team Page")
-    @Tags({@Tag("web"), @Tag("critical")})
-    @DisplayName("Check Create your account button")
+    @DisplayName("Check create account button")
     public void testContinueWithTeamOnTeamPage() {
         pages.openMainPage();
         pages.pushButtonByText("Team");

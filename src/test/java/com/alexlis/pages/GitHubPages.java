@@ -37,28 +37,28 @@ public class GitHubPages {
 
     @Step("GOTO {repository}")
     public void openRepository(String repository) {
-        $(linkText(repository)).click();
+        $(linkText(repository)).should(Condition.visible);
     }
 
     @Step("Нажать на ссылку Team в меню")
     public void pushButtonByText(String text) {
-        $(linkText(text)).click();
+        $(linkText(text)).scrollTo().click();
     }
 
-    @Step("Открыть вкладку Issues")
-    public void openIssuesTub() {
-        $(partialLinkText("Issues")).should(Condition.visible);
-    }
+//    @Step("Открыть вкладку Issues")
+//    public void openIssuesTub() {
+//        $(partialLinkText("Issues")).should(Condition.visible);
+//    }
 
     @Step("Проверить отображение «Build like the best teams on the planet»")
     public void checkText() {
         bestBuildForm.shouldHave(Condition.text("Build like the best teams on the planet"));
     }
 
-    @Step("Проверить issue")
-    public void shouldSeeIssueNumber() {
-        $("#issue_81_link").should(Condition.visible);
-    }
+//    @Step("Проверить issue")
+//    public void shouldSeeIssueNumber() {
+//        $("#issue_81_link").should(Condition.visible);
+//    }
 
     @Step("Нажать на кнопку «Sign up for free»")
     public void signUpButtonPush() {
