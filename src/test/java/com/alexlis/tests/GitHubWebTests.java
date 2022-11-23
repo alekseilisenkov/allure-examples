@@ -36,22 +36,10 @@ public class GitHubWebTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Story("Team Page")
-    @DisplayName("Assertion of text on Team page inside")
-    public void testAssertTextOnTeamPage() {
-        pages.openMainPage();
-        pages.pushButtonByText("Team");
-        pages.checkTextInside();
-    }
-
-    @Test
-    @Severity(SeverityLevel.CRITICAL)
-    @Story("Team Page")
     @DisplayName("Check login page")
     public void testSignUpForFreeTeamPage() {
         pages.openMainPage();
-        pages.pushButtonByText("Team");
         pages.signUpButtonPush();
-        pages.checkLoginPage();
     }
 
     @Test
