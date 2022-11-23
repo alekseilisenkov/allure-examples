@@ -40,8 +40,8 @@ public class GitHubPages {
     }
 
     @Step("Check issue with {number}")
-    public void shouldSeeIssueNumber(int number) {
-        $(withText("#" + number)).should(Condition.visible);
+    public void shouldSeeIssueNumber() {
+        $("#issue_81_link").should(Condition.visible);
     }
 
     @Attachment(value = "Screenshot", type = "text/html", fileExtension = "html")

@@ -30,7 +30,7 @@ public class GitHubWebTests extends TestBase {
         pages.searchForRepository(getRepo());
         pages.openRepository(getRepo());
         pages.openIssuesTub();
-        pages.shouldSeeIssueNumber(81);
+        pages.shouldSeeIssueNumber();
     }
 
     @Test
