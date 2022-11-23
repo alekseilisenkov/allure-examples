@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
-import static org.openqa.selenium.By.partialLinkText;
 
 public class GitHubPages {
 
@@ -19,9 +18,7 @@ public class GitHubPages {
 
     SelenideElement searchInput = $(".header-search-input");
     SelenideElement bestBuildForm = $(".h1-mktg");
-
     SelenideElement signUpButton = $(".h0-mktg");
-
     SelenideElement createTextCheckForm = $(".container-md");
     SelenideElement continueButton = $(".js-pricing-upgrade-path");
     SelenideElement loginForm = $(".text-mono");
@@ -53,17 +50,8 @@ public class GitHubPages {
         bestBuildForm.shouldHave(Condition.text("Build like the best teams on the planet"));
     }
 
-    @Step("Проверить отображение «Welcome to GitHub!»")
-    public void checkLoginPage() {
-        loginForm.shouldHave(Condition.text("Welcome to GitHub!"));
-    }
-
-
-
-
-
-    @Step("Нажать на кнопку «Sign up for free»")
-    public void signUpButtonPush() {
+    @Step("Проверка текста на главной странице")
+    public void checkMainPageValue() {
         signUpButton.shouldHave(Condition.text("\n" +
                 "          Let’s build from here\n" +
                 "        "));

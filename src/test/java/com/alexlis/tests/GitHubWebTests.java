@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 @Feature("GitHub")
 public class GitHubWebTests extends TestBase {
 
-
     @Test
     @Severity(SeverityLevel.MINOR)
     @Story("Search allure repo")
@@ -24,7 +23,7 @@ public class GitHubWebTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Story("Team Page")
+    @Story("Team page check")
     @Tags({@Tag("web"), @Tag("minor")})
     @DisplayName("Open Team page")
     public void testGoToTeamPage() {
@@ -35,11 +34,11 @@ public class GitHubWebTests extends TestBase {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @Story("Team Page")
+    @Story("Main page text check")
     @DisplayName("Check login page")
     public void testSignUpForFreeTeamPage() {
         pages.openMainPage();
-        pages.signUpButtonPush();
+        pages.checkMainPageValue();
     }
 
     @Test
