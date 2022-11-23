@@ -20,8 +20,9 @@ public class GitHubPages {
     SelenideElement searchInput = $(".header-search-input");
     SelenideElement bestBuildForm = $(".h1-mktg");
     SelenideElement signUpButton = $(".btn-large-mktg");
-    SelenideElement createAccountCheckForm = $(".container-md");
+    SelenideElement createTextCheckForm = $(".container-md");
     SelenideElement continueButton = $(".js-pricing-upgrade-path");
+    SelenideElement loginForm = $(".text-mono");
 
     @Step("Open main page GitHubCom")
     public void openMainPage() {
@@ -55,6 +56,17 @@ public class GitHubPages {
         bestBuildForm.shouldHave(Condition.text("Build like the best teams on the planet"));
     }
 
+    @Step("Проверить отображение вложенного текста на странице вкладки Team")
+    public void checkTextInside() {
+        bestBuildForm.shouldHave(Condition.text("With CI/CD, Dependabot, and the world’s largest developer community," +
+                " GitHub gives your team everything they need to ship better software faster."));
+    }
+    @Step("Проверить отображение «Welcome to GitHub!»")
+    public void checkLoginPage() {
+        loginForm.shouldHave(Condition.text("Welcome to GitHub!"));
+    }
+
+
 //    @Step("Проверить issue")
 //    public void shouldSeeIssueNumber() {
 //        $("#issue_81_link").should(Condition.visible);
@@ -67,7 +79,7 @@ public class GitHubPages {
 
     @Step("Проверить отображение «Create your account»")
     public void createAccountCheck() {
-        createAccountCheckForm.shouldHave(Condition.text("Join GitHub\n" +
+        createTextCheckForm.shouldHave(Condition.text("Join GitHub\n" +
                 "First, let's create your user account"));
     }
 

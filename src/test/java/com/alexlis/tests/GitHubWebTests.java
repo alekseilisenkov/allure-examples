@@ -20,8 +20,6 @@ public class GitHubWebTests extends TestBase {
         pages.openMainPage();
         pages.searchForRepository(pages.getRepo());
         pages.openRepository(pages.getRepo());
-//        pages.openIssuesTub();
-//        pages.shouldSeeIssueNumber();
     }
 
     @Test
@@ -38,12 +36,22 @@ public class GitHubWebTests extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Story("Team Page")
-    @DisplayName("Check SignUpForFree button")
+    @DisplayName("Assertion of text on Team page inside")
+    public void testAssertTextOnTeamPage() {
+        pages.openMainPage();
+        pages.pushButtonByText("Team");
+        pages.checkTextInside();
+    }
+
+    @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Team Page")
+    @DisplayName("Check login page")
     public void testSignUpForFreeTeamPage() {
         pages.openMainPage();
         pages.pushButtonByText("Team");
         pages.signUpButtonPush();
-        pages.createAccountCheck();
+        pages.checkLoginPage();
     }
 
     @Test
