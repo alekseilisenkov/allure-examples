@@ -19,7 +19,7 @@ import static org.openqa.selenium.By.linkText;
 @Owner("eazovtseva")
 @Feature("GitHub")
 public class GitHubWebTests extends TestBase {
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
+
 
     @Test
     @Story("Search from main Page")
@@ -28,8 +28,8 @@ public class GitHubWebTests extends TestBase {
     public void searchAllureExampleIssueTest(){
 
         steps.openMainPage();
-        steps.searchForRepository(REPOSITORY);
-        steps.openRepository(REPOSITORY);
+        steps.searchForRepository(getRepo());
+        steps.openRepository(getRepo());
         steps.openIssuesTub();
         steps.shouldSeeIssueNumber(76);
     }
