@@ -1,6 +1,5 @@
 package com.alexlis.tests;
 
-import com.alexlis.pages.GitHubSteps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -27,11 +26,11 @@ public class GitHubWebTests extends TestBase {
     @DisplayName("Search Issue in Allure-Example repository")
     public void searchAllureExampleIssueTest(){
 
-        steps.openMainPage();
-        steps.searchForRepository(getRepo());
-        steps.openRepository(getRepo());
-        steps.openIssuesTub();
-        steps.shouldSeeIssueNumber(76);
+        pages.openMainPage();
+        pages.searchForRepository(getRepo());
+        pages.openRepository(getRepo());
+        pages.openIssuesTub();
+        pages.shouldSeeIssueNumber(81);
     }
 
     @Test

@@ -1,7 +1,7 @@
 package com.alexlis.tests;
 
 import com.alexlis.helper.Attach;
-import com.alexlis.pages.GitHubSteps;
+import com.alexlis.pages.GitHubPages;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
 
-    public GitHubSteps steps = new GitHubSteps();
+    public GitHubPages pages = new GitHubPages();
 
     private static final String REPOSITORY = "eroshenkoam/allure-example";
 
