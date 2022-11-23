@@ -29,7 +29,7 @@ public class GitHubPages {
     public void searchForRepository(String repository) {
         searchInput.click();
         searchInput.sendKeys(repository);
-        searchInput.submit();
+        searchInput.pressEnter();
     }
 
     @Step("GOTO {repository}")
