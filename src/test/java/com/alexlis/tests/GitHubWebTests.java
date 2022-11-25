@@ -1,5 +1,9 @@
 package com.alexlis.tests;
 
+import com.alexlis.allure.JiraIssue;
+import com.alexlis.allure.Layer;
+import com.alexlis.allure.Microservice;
+import com.alexlis.allure.TM4J;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -11,6 +15,10 @@ import org.junit.jupiter.api.Test;
 public class GitHubWebTests extends TestBase {
 
     @Test
+    @JiraIssue("")
+    @Layer("High layer")
+    @Microservice("Repository")
+    @AllureId("13191")
     @Severity(SeverityLevel.MINOR)
     @Story("Search allure repo")
     @Tags({@Tag("web"), @Tag("minor")})
@@ -22,6 +30,10 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
+    @JiraIssue("")
+    @Layer("High layer")
+    @Microservice("Repository")
+    @AllureId("13193")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Team page check")
     @Tags({@Tag("web"), @Tag("minor")})
@@ -33,6 +45,11 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
+    @JiraIssue("")
+    @Layer("Low layer")
+    @TM4J("")
+    @Microservice("Repository_2")
+    @AllureId("13194")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Main page text check")
     @DisplayName("Check login page")
@@ -42,6 +59,10 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
+    @JiraIssue("")
+    @Layer("Low layer")
+    @Microservice("Repository_2")
+    @AllureId("13192")
     @Severity(SeverityLevel.MINOR)
     @Story("Team Page")
     @DisplayName("Check create account button")
