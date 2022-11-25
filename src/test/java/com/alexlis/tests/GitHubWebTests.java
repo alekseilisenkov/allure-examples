@@ -10,12 +10,12 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-@Layer("High layer")
 @Owner("Lisenkov")
 @Feature("GitHub")
 public class GitHubWebTests extends TestBase {
 
     @Test
+    @Layer("API")
     @JiraIssue("AUTO-1180")
     @Microservice("Repository")
     @AllureId("13191")
@@ -31,7 +31,7 @@ public class GitHubWebTests extends TestBase {
 
     @Test
     @JiraIssue("AUTO-1180")
-    @Layer("High layer")
+    @Layer("API")
     @Microservice("Repository")
     @AllureId("13193")
     @Severity(SeverityLevel.CRITICAL)
@@ -46,8 +46,8 @@ public class GitHubWebTests extends TestBase {
 
     @Test
     @JiraIssue("AUTO-1180")
-    @Layer("Low layer")
-    @TM4J("")
+    @Layer("WEB")
+    @TM4J("1")
     @Microservice("Repository_2")
     @AllureId("13194")
     @Severity(SeverityLevel.CRITICAL)
@@ -60,7 +60,7 @@ public class GitHubWebTests extends TestBase {
 
     @Test
     @JiraIssue("AUTO-1180")
-    @Layer("Low layer")
+    @Layer("WEB")
     @Microservice("Repository_2")
     @AllureId("13192")
     @Severity(SeverityLevel.MINOR)
