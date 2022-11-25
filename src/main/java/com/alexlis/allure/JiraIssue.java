@@ -16,5 +16,4 @@ import java.lang.annotation.*;
 public @interface JiraIssue {
 
     String value();
-
 }

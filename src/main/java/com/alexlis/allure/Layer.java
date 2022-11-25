@@ -15,5 +15,4 @@ import java.lang.annotation.*;
 public @interface Layer {
 
     String value();
-
 }

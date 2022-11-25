@@ -14,5 +14,4 @@ import java.lang.annotation.*;
 public @interface TM4J {
 
     String value();
-
 }
