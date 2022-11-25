@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 public class GitHubWebTests extends TestBase {
 
     @Test
-    @JiraIssue("")
+    @JiraIssue("AUTO-1180")
     @Layer("High layer")
     @Microservice("Repository")
     @AllureId("13191")
@@ -30,7 +30,7 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("")
+    @JiraIssue("AUTO-1180")
     @Layer("High layer")
     @Microservice("Repository")
     @AllureId("13193")
@@ -45,7 +45,7 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("")
+    @JiraIssue("AUTO-1180")
     @Layer("Low layer")
     @TM4J("")
     @Microservice("Repository_2")
@@ -59,7 +59,7 @@ public class GitHubWebTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("")
+    @JiraIssue("AUTO-1180")
     @Layer("Low layer")
     @Microservice("Repository_2")
     @AllureId("13192")
