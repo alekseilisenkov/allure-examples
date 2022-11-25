@@ -1,6 +1,5 @@
 package com.alexlis.allure;
 
-import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.*;
 
@@ -12,7 +11,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Repeatable(JiraIssues.class)
-@LabelAnnotation(name = "jira")
+//@LabelAnnotation(name = "jira")
 public @interface JiraIssue {
 
     String value();

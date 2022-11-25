@@ -1,6 +1,5 @@
 package com.alexlis.allure;
 
-import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.*;
 
@@ -11,7 +10,7 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@LabelAnnotation(name = "layer")
+//@LabelAnnotation(name = "layer")
 public @interface Layer {
 
     String value();

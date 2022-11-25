@@ -10,13 +10,13 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+@Layer("High layer")
 @Owner("Lisenkov")
 @Feature("GitHub")
 public class GitHubWebTests extends TestBase {
 
     @Test
     @JiraIssue("AUTO-1180")
-    @Layer("High layer")
     @Microservice("Repository")
     @AllureId("13191")
     @Severity(SeverityLevel.MINOR)

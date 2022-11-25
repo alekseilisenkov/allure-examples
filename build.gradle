@@ -22,8 +22,8 @@ allure {
 }
 
 dependencies {
-    implementation 'commons-io:commons-io:2.11.0'
-    implementation 'io.qameta.allure:allure-java-commons:2.20.1'
+//    implementation 'commons-io:commons-io:2.11.0'
+//    implementation 'io.qameta.allure:allure-java-commons:2.20.1'
 
     testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
@@ -32,7 +32,7 @@ dependencies {
             "io.rest-assured:rest-assured:4.3.3",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "org.aeonbits.owner:owner:1.0.12",
-            "org.slf4j:slf4j-simple:1.7.29")
+            'org.slf4j:slf4j-simple:2.0.4')
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
@@ -52,5 +52,10 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task tests(type: Test) {
+    useJUnitPlatform {
     }
 }

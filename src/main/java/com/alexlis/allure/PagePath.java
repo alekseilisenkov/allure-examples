@@ -1,6 +1,5 @@
 package com.alexlis.allure;
 
-import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.*;
 
@@ -8,7 +7,7 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-@LabelAnnotation(name = "page")
+//@LabelAnnotation(name = "page")
 public @interface PagePath {
 
     String value();
