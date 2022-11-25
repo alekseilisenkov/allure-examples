@@ -22,7 +22,7 @@ allure {
 }
 
 dependencies {
-//    implementation 'commons-io:commons-io:2.11.0'
+//    implementation 'commons-io:commons-io:2.11.0' this dep break tests
 //    implementation 'io.qameta.allure:allure-java-commons:2.20.1'
 
     testImplementation(
